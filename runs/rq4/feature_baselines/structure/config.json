@@ -1,0 +1,35 @@
+{
+  "kind": "structure",
+  "selected_C": 1.0,
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "seed": 42,
+  "feature_names": [
+    "mean_word_characters",
+    "unique_word_fraction",
+    "digit_word_fraction",
+    "uppercase_character_fraction",
+    "punctuation_character_fraction",
+    "comma_character_fraction",
+    "period_character_fraction",
+    "colon_character_fraction",
+    "semicolon_character_fraction",
+    "hyphen_character_fraction",
+    "parenthesis_character_fraction",
+    "quote_character_fraction",
+    "slash_character_fraction",
+    "newline_character_fraction",
+    "question_character_fraction",
+    "exclamation_character_fraction",
+    "bullet_lines_per_word",
+    "markdown_heading_lines_per_word"
+  ],
+  "selection": "validation macro-F1; validation log-loss tie break",
+  "fit_split": "train",
+  "refit_on_validation": false,
+  "lexical_settings": null
+}

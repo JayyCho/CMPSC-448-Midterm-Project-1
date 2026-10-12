@@ -1,0 +1,79 @@
+{
+  "experiment": "RQ3 keyword-defined subject-domain transfer",
+  "status": "Frozen before the four RQ3 fits and evaluations",
+  "created_utc": "2026-10-12T00:03:19.030787+00:00",
+  "exploratory_extension": true,
+  "exploratory_reason": "Original project test results were previously inspected; these are new predefined extension experiments, not a pristine confirmatory test.",
+  "source_domains": [
+    "life_sciences",
+    "physical_sciences"
+  ],
+  "architectures": [
+    "cnn",
+    "lstm"
+  ],
+  "mode": "output",
+  "fit_and_vocabulary": "source-domain original train only",
+  "selection": "source-domain original validation macro-F1; validation loss breaks ties",
+  "evaluation": "same selected checkpoint on source-domain test and other-domain target_test",
+  "target_adaptation": "none",
+  "interpretation": "Subject-domain transfer within the same scientific-ideation task, prompt, effort, and generator versions; not cross-task generalization.",
+  "training_arguments": {
+    "data_dir": "data/rq3",
+    "output_dir": "runs/rq3",
+    "models": [
+      "cnn",
+      "lstm"
+    ],
+    "modes": [
+      "output"
+    ],
+    "epochs": 10,
+    "batch_size": 64,
+    "embedding_dim": 128,
+    "hidden_dim": 128,
+    "dropout": 0.3,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "patience": 3,
+    "grad_clip": 1.0,
+    "max_vocab": 30000,
+    "min_freq": 2,
+    "max_input": 128,
+    "max_output": 384,
+    "seed": 42,
+    "device": "cpu",
+    "num_workers": 0,
+    "cpu_threads": 4,
+    "overwrite": false
+  },
+  "files_sha256": {
+    "train.py": "8cbd378b635096f2035d4b71983a1fbbea97824372d552f004c380bcb752bf30",
+    "rq3_experiments.py": "f48059b3cbc028dbbe49fa76af5176fb70d0342bb124e60d2514c5ade252eab9",
+    "manifest.json": "a84766ba8f26726167a4a3eac4067f83fb5c9a92f9b47c3a72307439f526b3d2",
+    "life_sciences/train.jsonl": "30ea6d96ad19d02df329dbd3f27faeca7d593c1fcba3d0f55998c020712eceff",
+    "life_sciences/validation.jsonl": "69a5583f90033a9d2e355021e171dd653a218605fcd719eb32c4745e43f953a4",
+    "life_sciences/test.jsonl": "0465f1c76c8cf1a98cccf7546948bc0b5e94ed31eb1740680f8145b8dd288557",
+    "life_sciences/target_test.jsonl": "225331ddea0936df4d313d0559ab03dea2592180cda97946b53a0fe47db8d0e4",
+    "life_sciences/metadata.json": "a1a7fb999a770ff84913b1f46b3e65ccba63d47c08cd82cb292489aba841c4e9",
+    "physical_sciences/train.jsonl": "6c3c67cf6a3ce222d6c21931e23a794a9979ac82a38ddf6f27afaad6fbaab0ab",
+    "physical_sciences/validation.jsonl": "e8d06d0196174e8bef939017556bb199e329b9d7d5726ea7e8ad2b8f11d76587",
+    "physical_sciences/test.jsonl": "225331ddea0936df4d313d0559ab03dea2592180cda97946b53a0fe47db8d0e4",
+    "physical_sciences/target_test.jsonl": "0465f1c76c8cf1a98cccf7546948bc0b5e94ed31eb1740680f8145b8dd288557",
+    "physical_sciences/metadata.json": "c8bde497817ccbb27fbaf8377c30f43abf82379d3597ae9d89d3857b93f24222"
+  },
+  "split_sizes": {
+    "life_sciences": {
+      "train": 1590,
+      "validation": 270,
+      "test": 420,
+      "target_test": 270
+    },
+    "physical_sciences": {
+      "train": 1800,
+      "validation": 420,
+      "test": 270,
+      "target_test": 420
+    }
+  }
+}

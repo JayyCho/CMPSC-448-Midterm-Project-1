@@ -1,0 +1,44 @@
+{
+  "data_dir": "data/rq3/life_sciences",
+  "output_dir": "runs/rq3/life_sciences",
+  "models": [
+    "cnn",
+    "lstm"
+  ],
+  "modes": [
+    "output"
+  ],
+  "epochs": 10,
+  "batch_size": 64,
+  "embedding_dim": 128,
+  "hidden_dim": 128,
+  "dropout": 0.3,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "patience": 3,
+  "grad_clip": 1.0,
+  "max_vocab": 30000,
+  "min_freq": 2,
+  "max_input": 128,
+  "max_output": 384,
+  "seed": 42,
+  "device": "cpu",
+  "num_workers": 0,
+  "cpu_threads": 4,
+  "overwrite": false,
+  "model": "cnn",
+  "mode": "output",
+  "vocab_size": 7114,
+  "num_classes": 3,
+  "label_names": [
+    "claude-sonnet-4-6",
+    "gpt-5-4",
+    "gemini-3-1-pro"
+  ],
+  "split_sizes": {
+    "train": 1590,
+    "validation": 270,
+    "test": 420
+  },
+  "pytorch_version": "2.14.1"
+}

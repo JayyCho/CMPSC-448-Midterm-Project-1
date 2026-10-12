@@ -1,0 +1,64 @@
+{
+  "max_input": 128,
+  "max_output": 384,
+  "max_combined_tokens": 513,
+  "splits": {
+    "train": {
+      "examples": 6300,
+      "input": {
+        "mean_tokens": 121.65714285714286,
+        "median_tokens": 122.0,
+        "p95_tokens": 122.0,
+        "max_tokens": 123,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      },
+      "output": {
+        "mean_tokens": 135.46666666666667,
+        "median_tokens": 119.0,
+        "p95_tokens": 228.0,
+        "max_tokens": 279,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      }
+    },
+    "validation": {
+      "examples": 1350,
+      "input": {
+        "mean_tokens": 121.73333333333333,
+        "median_tokens": 122.0,
+        "p95_tokens": 123.0,
+        "max_tokens": 123,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      },
+      "output": {
+        "mean_tokens": 137.40740740740742,
+        "median_tokens": 121.0,
+        "p95_tokens": 229.54999999999995,
+        "max_tokens": 274,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      }
+    },
+    "test": {
+      "examples": 1350,
+      "input": {
+        "mean_tokens": 121.75555555555556,
+        "median_tokens": 122.0,
+        "p95_tokens": 123.0,
+        "max_tokens": 123,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      },
+      "output": {
+        "mean_tokens": 134.60962962962964,
+        "median_tokens": 118.0,
+        "p95_tokens": 228.0,
+        "max_tokens": 280,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      }
+    }
+  }
+}

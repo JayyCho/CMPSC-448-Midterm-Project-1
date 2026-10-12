@@ -1,0 +1,83 @@
+{
+  "max_input": 128,
+  "max_output": 384,
+  "max_combined_tokens": 513,
+  "splits": {
+    "train": {
+      "examples": 1590,
+      "input": {
+        "mean_tokens": 121.58490566037736,
+        "median_tokens": 122.0,
+        "p95_tokens": 122.0,
+        "max_tokens": 123,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      },
+      "output": {
+        "mean_tokens": 135.14654088050315,
+        "median_tokens": 119.0,
+        "p95_tokens": 227.54999999999995,
+        "max_tokens": 274,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      }
+    },
+    "validation": {
+      "examples": 270,
+      "input": {
+        "mean_tokens": 121.33333333333333,
+        "median_tokens": 121.0,
+        "p95_tokens": 122.0,
+        "max_tokens": 122,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      },
+      "output": {
+        "mean_tokens": 136.1925925925926,
+        "median_tokens": 120.0,
+        "p95_tokens": 223.64999999999995,
+        "max_tokens": 266,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      }
+    },
+    "test": {
+      "examples": 420,
+      "input": {
+        "mean_tokens": 121.5,
+        "median_tokens": 121.5,
+        "p95_tokens": 122.0,
+        "max_tokens": 122,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      },
+      "output": {
+        "mean_tokens": 132.76190476190476,
+        "median_tokens": 116.5,
+        "p95_tokens": 226.04999999999995,
+        "max_tokens": 262,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      }
+    },
+    "target_test": {
+      "examples": 270,
+      "input": {
+        "mean_tokens": 121.55555555555556,
+        "median_tokens": 122.0,
+        "p95_tokens": 122.0,
+        "max_tokens": 122,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      },
+      "output": {
+        "mean_tokens": 134.97037037037038,
+        "median_tokens": 121.0,
+        "p95_tokens": 219.09999999999997,
+        "max_tokens": 265,
+        "truncated_examples": 0,
+        "truncation_fraction": 0.0
+      }
+    }
+  }
+}

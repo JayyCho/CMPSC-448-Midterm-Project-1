@@ -1,0 +1,1244 @@
+{
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 42,
+    "confidence_level": 0.95,
+    "interval": "percentile",
+    "unit": "whole keyword clusters",
+    "numpy_version": "2.5.4",
+    "draw_sharing": "identical keyword sets use identical draws; disjoint domain sets use independent streams",
+    "stream_derivation": "NumPy SeedSequence([seed, SHA256(sorted keyword names) as eight little-endian uint32 words])",
+    "conditional_on": "saved model, training seed, fixed split and chosen domain mapping"
+  },
+  "label_names": [
+    "claude-sonnet-4-6",
+    "gpt-5-4",
+    "gemini-3-1-pro"
+  ],
+  "results": [
+    {
+      "rq": "RQ3",
+      "condition": "source_training",
+      "architecture": "cnn",
+      "source_domain": "life_sciences",
+      "target_domain": "life_sciences",
+      "evaluation": "in_domain",
+      "n_examples": 420,
+      "n_keywords": 14,
+      "prediction_file": "runs/rq3/life_sciences/cnn_output/test_predictions.jsonl",
+      "prediction_sha256": "7f9678b62bdfc7622c433be0bec0b5663ef4d3e98264173dd3d9de83b236dd97",
+      "accuracy": 0.9619047619047619,
+      "accuracy_ci_low": 0.9428571428571428,
+      "accuracy_ci_high": 0.9809523809523809,
+      "macro_f1": 0.9617299619993975,
+      "macro_f1_ci_low": 0.9424751483289736,
+      "macro_f1_ci_high": 0.9809136956646958,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.9507042253521126,
+        "gpt-5-4": 0.9824561403508771,
+        "gemini-3-1-pro": 0.9520295202952029
+      },
+      "confusion_matrix": [
+        [
+          135,
+          3,
+          2
+        ],
+        [
+          0,
+          140,
+          0
+        ],
+        [
+          9,
+          2,
+          129
+        ]
+      ]
+    },
+    {
+      "rq": "RQ3",
+      "condition": "source_training",
+      "architecture": "cnn",
+      "source_domain": "life_sciences",
+      "target_domain": "physical_sciences",
+      "evaluation": "cross_domain",
+      "n_examples": 270,
+      "n_keywords": 9,
+      "prediction_file": "runs/rq3/life_sciences/cnn_output/cross_domain_predictions.jsonl",
+      "prediction_sha256": "c0341ec74608a4aeb0dcb3779b16f20f2196dfe279fa8e73331f4919d947f789",
+      "accuracy": 0.9444444444444444,
+      "accuracy_ci_low": 0.9222222222222223,
+      "accuracy_ci_high": 0.9666666666666667,
+      "macro_f1": 0.9444596053473936,
+      "macro_f1_ci_low": 0.9221528370307098,
+      "macro_f1_ci_high": 0.9665837880227214,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.918918918918919,
+        "gpt-5-4": 0.9834254143646409,
+        "gemini-3-1-pro": 0.9310344827586207
+      },
+      "confusion_matrix": [
+        [
+          85,
+          2,
+          3
+        ],
+        [
+          1,
+          89,
+          0
+        ],
+        [
+          9,
+          0,
+          81
+        ]
+      ]
+    },
+    {
+      "rq": "RQ3",
+      "condition": "source_training",
+      "architecture": "lstm",
+      "source_domain": "life_sciences",
+      "target_domain": "life_sciences",
+      "evaluation": "in_domain",
+      "n_examples": 420,
+      "n_keywords": 14,
+      "prediction_file": "runs/rq3/life_sciences/lstm_output/test_predictions.jsonl",
+      "prediction_sha256": "13dfba4a83c56c9cbc1de674a95d1024f0a8827b87fb3e2750a26f2ea627af0e",
+      "accuracy": 0.9166666666666666,
+      "accuracy_ci_low": 0.8952380952380953,
+      "accuracy_ci_high": 0.9380952380952381,
+      "macro_f1": 0.9150831701133869,
+      "macro_f1_ci_low": 0.891826801073221,
+      "macro_f1_ci_high": 0.9374954798303521,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.8725868725868726,
+        "gpt-5-4": 0.9448275862068966,
+        "gemini-3-1-pro": 0.9278350515463918
+      },
+      "confusion_matrix": [
+        [
+          113,
+          11,
+          16
+        ],
+        [
+          3,
+          137,
+          0
+        ],
+        [
+          3,
+          2,
+          135
+        ]
+      ]
+    },
+    {
+      "rq": "RQ3",
+      "condition": "source_training",
+      "architecture": "lstm",
+      "source_domain": "life_sciences",
+      "target_domain": "physical_sciences",
+      "evaluation": "cross_domain",
+      "n_examples": 270,
+      "n_keywords": 9,
+      "prediction_file": "runs/rq3/life_sciences/lstm_output/cross_domain_predictions.jsonl",
+      "prediction_sha256": "8ae16ea65ed8d841ce39877739fe455b3ddc82e95608ccdaa09de4d2dbe4b226",
+      "accuracy": 0.8925925925925926,
+      "accuracy_ci_low": 0.8555555555555555,
+      "accuracy_ci_high": 0.9296296296296296,
+      "macro_f1": 0.8906409082879673,
+      "macro_f1_ci_low": 0.8488233234137754,
+      "macro_f1_ci_high": 0.929284982231647,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.8333333333333334,
+        "gpt-5-4": 0.9081081081081082,
+        "gemini-3-1-pro": 0.93048128342246
+      },
+      "confusion_matrix": [
+        [
+          70,
+          11,
+          9
+        ],
+        [
+          5,
+          84,
+          1
+        ],
+        [
+          3,
+          0,
+          87
+        ]
+      ]
+    },
+    {
+      "rq": "RQ3",
+      "condition": "source_training",
+      "architecture": "cnn",
+      "source_domain": "physical_sciences",
+      "target_domain": "physical_sciences",
+      "evaluation": "in_domain",
+      "n_examples": 270,
+      "n_keywords": 9,
+      "prediction_file": "runs/rq3/physical_sciences/cnn_output/test_predictions.jsonl",
+      "prediction_sha256": "59c71ff8d1f13cdce7064ec165f1a831d56c167666ddca03327e765276f3f637",
+      "accuracy": 0.9592592592592593,
+      "accuracy_ci_low": 0.937037037037037,
+      "accuracy_ci_high": 0.9777777777777777,
+      "macro_f1": 0.9590050734257458,
+      "macro_f1_ci_low": 0.9366960214951877,
+      "macro_f1_ci_high": 0.9777724082981731,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.9378531073446328,
+        "gpt-5-4": 0.9836065573770492,
+        "gemini-3-1-pro": 0.9555555555555556
+      },
+      "confusion_matrix": [
+        [
+          83,
+          3,
+          4
+        ],
+        [
+          0,
+          90,
+          0
+        ],
+        [
+          4,
+          0,
+          86
+        ]
+      ]
+    },
+    {
+      "rq": "RQ3",
+      "condition": "source_training",
+      "architecture": "cnn",
+      "source_domain": "physical_sciences",
+      "target_domain": "life_sciences",
+      "evaluation": "cross_domain",
+      "n_examples": 420,
+      "n_keywords": 14,
+      "prediction_file": "runs/rq3/physical_sciences/cnn_output/cross_domain_predictions.jsonl",
+      "prediction_sha256": "facc25121386ef75146ae9c234d02d09fd291c3ab1c3c9c3f615494eff7f0e3e",
+      "accuracy": 0.9523809523809523,
+      "accuracy_ci_low": 0.9357142857142857,
+      "accuracy_ci_high": 0.969047619047619,
+      "macro_f1": 0.9521226709702714,
+      "macro_f1_ci_low": 0.9353019507376553,
+      "macro_f1_ci_high": 0.9689440996654651,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.9347826086956522,
+        "gpt-5-4": 0.9688581314878892,
+        "gemini-3-1-pro": 0.9527272727272728
+      },
+      "confusion_matrix": [
+        [
+          129,
+          7,
+          4
+        ],
+        [
+          0,
+          140,
+          0
+        ],
+        [
+          7,
+          2,
+          131
+        ]
+      ]
+    },
+    {
+      "rq": "RQ3",
+      "condition": "source_training",
+      "architecture": "lstm",
+      "source_domain": "physical_sciences",
+      "target_domain": "physical_sciences",
+      "evaluation": "in_domain",
+      "n_examples": 270,
+      "n_keywords": 9,
+      "prediction_file": "runs/rq3/physical_sciences/lstm_output/test_predictions.jsonl",
+      "prediction_sha256": "0550b9a57ff16222b1a26cb39125ca9184e324db63d429fe7d61c385f7336c93",
+      "accuracy": 0.9555555555555556,
+      "accuracy_ci_low": 0.9259259259259259,
+      "accuracy_ci_high": 0.9814814814814815,
+      "macro_f1": 0.9553038324770107,
+      "macro_f1_ci_low": 0.9251512954847496,
+      "macro_f1_ci_high": 0.9814809099046267,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.9325842696629213,
+        "gpt-5-4": 0.9836065573770492,
+        "gemini-3-1-pro": 0.9497206703910615
+      },
+      "confusion_matrix": [
+        [
+          83,
+          3,
+          4
+        ],
+        [
+          0,
+          90,
+          0
+        ],
+        [
+          5,
+          0,
+          85
+        ]
+      ]
+    },
+    {
+      "rq": "RQ3",
+      "condition": "source_training",
+      "architecture": "lstm",
+      "source_domain": "physical_sciences",
+      "target_domain": "life_sciences",
+      "evaluation": "cross_domain",
+      "n_examples": 420,
+      "n_keywords": 14,
+      "prediction_file": "runs/rq3/physical_sciences/lstm_output/cross_domain_predictions.jsonl",
+      "prediction_sha256": "d74b172fb6718fbb4f40deb1e377774f2595259ed9bdecf15050549b260324ae",
+      "accuracy": 0.8928571428571429,
+      "accuracy_ci_low": 0.85,
+      "accuracy_ci_high": 0.9333333333333333,
+      "macro_f1": 0.8910504612426505,
+      "macro_f1_ci_low": 0.8460951916728728,
+      "macro_f1_ci_high": 0.9328958117326919,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.8404669260700389,
+        "gpt-5-4": 0.9084967320261438,
+        "gemini-3-1-pro": 0.924187725631769
+      },
+      "confusion_matrix": [
+        [
+          108,
+          23,
+          9
+        ],
+        [
+          1,
+          139,
+          0
+        ],
+        [
+          8,
+          4,
+          128
+        ]
+      ]
+    },
+    {
+      "rq": "RQ4",
+      "condition": "original",
+      "architecture": "cnn",
+      "source_domain": "all",
+      "target_domain": "all",
+      "evaluation": "fixed_test",
+      "n_examples": 1350,
+      "n_keywords": 45,
+      "prediction_file": "runs/cnn_output/test_predictions.jsonl",
+      "prediction_sha256": "89bfe70bf3045171b4d3f88ea3d5a170c6a44dd45c603fe7bc4e88ebee22afee",
+      "accuracy": 0.9829629629629629,
+      "accuracy_ci_low": 0.9762962962962963,
+      "accuracy_ci_high": 0.9896296296296296,
+      "macro_f1": 0.9829526732913654,
+      "macro_f1_ci_low": 0.976297882111641,
+      "macro_f1_ci_high": 0.9896245924583326,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.9767441860465116,
+        "gpt-5-4": 0.9922480620155039,
+        "gemini-3-1-pro": 0.9798657718120806
+      },
+      "confusion_matrix": [
+        [
+          441,
+          4,
+          5
+        ],
+        [
+          1,
+          448,
+          1
+        ],
+        [
+          11,
+          1,
+          438
+        ]
+      ]
+    },
+    {
+      "rq": "RQ4",
+      "condition": "original",
+      "architecture": "lstm",
+      "source_domain": "all",
+      "target_domain": "all",
+      "evaluation": "fixed_test",
+      "n_examples": 1350,
+      "n_keywords": 45,
+      "prediction_file": "runs/lstm_output/test_predictions.jsonl",
+      "prediction_sha256": "c50e4bf7018ea6552450d1f4d80ac538fa5dcaff195041aaf1d16c3eed89ea29",
+      "accuracy": 0.9577777777777777,
+      "accuracy_ci_low": 0.9444444444444444,
+      "accuracy_ci_high": 0.9703703703703703,
+      "macro_f1": 0.9575186361709419,
+      "macro_f1_ci_low": 0.9441185809340915,
+      "macro_f1_ci_high": 0.9702538886778763,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.9372862029646523,
+        "gpt-5-4": 0.9692982456140351,
+        "gemini-3-1-pro": 0.9659714599341384
+      },
+      "confusion_matrix": [
+        [
+          411,
+          19,
+          20
+        ],
+        [
+          7,
+          442,
+          1
+        ],
+        [
+          9,
+          1,
+          440
+        ]
+      ]
+    },
+    {
+      "rq": "RQ4",
+      "condition": "no_punctuation",
+      "architecture": "cnn",
+      "source_domain": "all",
+      "target_domain": "all",
+      "evaluation": "fixed_test",
+      "n_examples": 1350,
+      "n_keywords": 45,
+      "prediction_file": "runs/rq4/no_punctuation/cnn_output/test_predictions.jsonl",
+      "prediction_sha256": "e3e7d054317d3cd8a81323c74b9743c2dc43f31c7bace61fd1c259a9de8e13c1",
+      "accuracy": 0.9629629629629629,
+      "accuracy_ci_low": 0.9540740740740741,
+      "accuracy_ci_high": 0.9725925925925926,
+      "macro_f1": 0.9628923909876456,
+      "macro_f1_ci_low": 0.9539249803619371,
+      "macro_f1_ci_high": 0.9725309887241649,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.9510022271714922,
+        "gpt-5-4": 0.9758771929824561,
+        "gemini-3-1-pro": 0.9617977528089887
+      },
+      "confusion_matrix": [
+        [
+          427,
+          11,
+          12
+        ],
+        [
+          5,
+          445,
+          0
+        ],
+        [
+          16,
+          6,
+          428
+        ]
+      ]
+    },
+    {
+      "rq": "RQ4",
+      "condition": "no_punctuation",
+      "architecture": "lstm",
+      "source_domain": "all",
+      "target_domain": "all",
+      "evaluation": "fixed_test",
+      "n_examples": 1350,
+      "n_keywords": 45,
+      "prediction_file": "runs/rq4/no_punctuation/lstm_output/test_predictions.jsonl",
+      "prediction_sha256": "b33b4e73d0d7b44ef95a040262a096337cee60c2e3e4a596f4f71a6df70461ab",
+      "accuracy": 0.945925925925926,
+      "accuracy_ci_low": 0.9311111111111111,
+      "accuracy_ci_high": 0.96,
+      "macro_f1": 0.9457687789956083,
+      "macro_f1_ci_low": 0.9309604868326904,
+      "macro_f1_ci_high": 0.9599947330607199,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.9265536723163842,
+        "gpt-5-4": 0.9526952695269527,
+        "gemini-3-1-pro": 0.9580573951434879
+      },
+      "confusion_matrix": [
+        [
+          410,
+          22,
+          18
+        ],
+        [
+          13,
+          433,
+          4
+        ],
+        [
+          12,
+          4,
+          434
+        ]
+      ]
+    },
+    {
+      "rq": "RQ4",
+      "condition": "no_punctuation_fixed_words",
+      "architecture": "cnn",
+      "source_domain": "all",
+      "target_domain": "all",
+      "evaluation": "fixed_test",
+      "n_examples": 1350,
+      "n_keywords": 45,
+      "prediction_file": "runs/rq4/no_punctuation_fixed_words/cnn_output/test_predictions.jsonl",
+      "prediction_sha256": "c0dba7ffa0ebeb209840f05e837e792e30cdaef2a49d5386806d4d75e79de963",
+      "accuracy": 0.9244444444444444,
+      "accuracy_ci_low": 0.9081481481481481,
+      "accuracy_ci_high": 0.9392592592592592,
+      "macro_f1": 0.9246675612046111,
+      "macro_f1_ci_low": 0.90845677132504,
+      "macro_f1_ci_high": 0.939498296534054,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.8954895489548955,
+        "gpt-5-4": 0.9269911504424779,
+        "gemini-3-1-pro": 0.95152198421646
+      },
+      "confusion_matrix": [
+        [
+          407,
+          30,
+          13
+        ],
+        [
+          29,
+          419,
+          2
+        ],
+        [
+          23,
+          5,
+          422
+        ]
+      ]
+    },
+    {
+      "rq": "RQ4",
+      "condition": "no_punctuation_fixed_words",
+      "architecture": "lstm",
+      "source_domain": "all",
+      "target_domain": "all",
+      "evaluation": "fixed_test",
+      "n_examples": 1350,
+      "n_keywords": 45,
+      "prediction_file": "runs/rq4/no_punctuation_fixed_words/lstm_output/test_predictions.jsonl",
+      "prediction_sha256": "6a7f1fb7526085a5038b36bec8280764b3ecc916fcc5482b23d8d7c158e81827",
+      "accuracy": 0.9244444444444444,
+      "accuracy_ci_low": 0.9096296296296297,
+      "accuracy_ci_high": 0.94,
+      "macro_f1": 0.9248135386701793,
+      "macro_f1_ci_low": 0.9099136035235295,
+      "macro_f1_ci_high": 0.9400681608210038,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.8930131004366813,
+        "gpt-5-4": 0.9290465631929047,
+        "gemini-3-1-pro": 0.9523809523809523
+      },
+      "confusion_matrix": [
+        [
+          409,
+          29,
+          12
+        ],
+        [
+          31,
+          419,
+          0
+        ],
+        [
+          26,
+          4,
+          420
+        ]
+      ]
+    },
+    {
+      "rq": "RQ4",
+      "condition": "logistic_length",
+      "architecture": "logistic",
+      "source_domain": "all",
+      "target_domain": "all",
+      "evaluation": "fixed_test",
+      "n_examples": 1350,
+      "n_keywords": 45,
+      "prediction_file": "runs/rq4/feature_baselines/length/test_predictions.jsonl",
+      "prediction_sha256": "3d9205a0e8cf937ee11ff3a50ab40895ffa7422bacc63b8fcd428850e8466899",
+      "accuracy": 0.7325925925925926,
+      "accuracy_ci_low": 0.7044444444444444,
+      "accuracy_ci_high": 0.7622222222222222,
+      "macro_f1": 0.7393656239200127,
+      "macro_f1_ci_low": 0.7118477179920143,
+      "macro_f1_ci_high": 0.7673705486693729,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.6549364613880743,
+        "gpt-5-4": 0.6525323910482921,
+        "gemini-3-1-pro": 0.9106280193236715
+      },
+      "confusion_matrix": [
+        [
+          335,
+          115,
+          0
+        ],
+        [
+          172,
+          277,
+          1
+        ],
+        [
+          66,
+          7,
+          377
+        ]
+      ],
+      "selected_C": 0.01
+    },
+    {
+      "rq": "RQ4",
+      "condition": "logistic_structure",
+      "architecture": "logistic",
+      "source_domain": "all",
+      "target_domain": "all",
+      "evaluation": "fixed_test",
+      "n_examples": 1350,
+      "n_keywords": 45,
+      "prediction_file": "runs/rq4/feature_baselines/structure/test_predictions.jsonl",
+      "prediction_sha256": "ce48e61cd21c35af106b3f3a92fcf8f360100305a6b9cbbe78037e14fbca6bb5",
+      "accuracy": 0.8970370370370371,
+      "accuracy_ci_low": 0.8770370370370371,
+      "accuracy_ci_high": 0.9155555555555556,
+      "macro_f1": 0.8967134655282009,
+      "macro_f1_ci_low": 0.8770731507225054,
+      "macro_f1_ci_high": 0.9153395409452293,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.8539325842696629,
+        "gpt-5-4": 0.9374313940724479,
+        "gemini-3-1-pro": 0.8987764182424917
+      },
+      "confusion_matrix": [
+        [
+          380,
+          26,
+          44
+        ],
+        [
+          22,
+          427,
+          1
+        ],
+        [
+          38,
+          8,
+          404
+        ]
+      ],
+      "selected_C": 1.0
+    },
+    {
+      "rq": "RQ4",
+      "condition": "logistic_lexical",
+      "architecture": "logistic",
+      "source_domain": "all",
+      "target_domain": "all",
+      "evaluation": "fixed_test",
+      "n_examples": 1350,
+      "n_keywords": 45,
+      "prediction_file": "runs/rq4/feature_baselines/lexical/test_predictions.jsonl",
+      "prediction_sha256": "a0243d66d35cb31449cf6550a9e4e0a938ac9e4cc1013f12faa8d5cf3bfcf926",
+      "accuracy": 0.9888888888888889,
+      "accuracy_ci_low": 0.9829629629629629,
+      "accuracy_ci_high": 0.9940740740740741,
+      "macro_f1": 0.9888860488868625,
+      "macro_f1_ci_low": 0.9829665705114822,
+      "macro_f1_ci_high": 0.9940797551040389,
+      "class_f1": {
+        "claude-sonnet-4-6": 0.9845132743362832,
+        "gpt-5-4": 0.9944629014396457,
+        "gemini-3-1-pro": 0.9876819708846585
+      },
+      "confusion_matrix": [
+        [
+          445,
+          3,
+          2
+        ],
+        [
+          1,
+          449,
+          0
+        ],
+        [
+          8,
+          1,
+          441
+        ]
+      ],
+      "selected_C": 10.0
+    }
+  ],
+  "contrasts": [
+    {
+      "rq": "RQ3",
+      "architecture": "cnn",
+      "source_domain": "life_sciences",
+      "comparison": "cross_domain_minus_in_domain",
+      "bootstrap_pairing": "independent source/target domain keyword resampling",
+      "accuracy_difference": -0.01746031746031751,
+      "accuracy_difference_ci_low": -0.04841269841269846,
+      "accuracy_difference_ci_high": 0.012440476190476186,
+      "macro_f1_difference": -0.017270356652003938,
+      "macro_f1_difference_ci_low": -0.04770115220497998,
+      "macro_f1_difference_ci_high": 0.012666484564080153
+    },
+    {
+      "rq": "RQ3",
+      "architecture": "lstm",
+      "source_domain": "life_sciences",
+      "comparison": "cross_domain_minus_in_domain",
+      "bootstrap_pairing": "independent source/target domain keyword resampling",
+      "accuracy_difference": -0.024074074074074026,
+      "accuracy_difference_ci_low": -0.06667328042328041,
+      "accuracy_difference_ci_high": 0.01931216931216939,
+      "macro_f1_difference": -0.024442261825419642,
+      "macro_f1_difference_ci_low": -0.07193325446741404,
+      "macro_f1_difference_ci_high": 0.02111255679937105
+    },
+    {
+      "rq": "RQ3",
+      "architecture": "cnn",
+      "source_domain": "physical_sciences",
+      "comparison": "cross_domain_minus_in_domain",
+      "bootstrap_pairing": "independent source/target domain keyword resampling",
+      "accuracy_difference": -0.006878306878306928,
+      "accuracy_difference_ci_low": -0.032539682539682535,
+      "accuracy_difference_ci_high": 0.019583333333333303,
+      "macro_f1_difference": -0.006882402455474446,
+      "macro_f1_difference_ci_low": -0.03262510854221039,
+      "macro_f1_difference_ci_high": 0.019800016853262936
+    },
+    {
+      "rq": "RQ3",
+      "architecture": "lstm",
+      "source_domain": "physical_sciences",
+      "comparison": "cross_domain_minus_in_domain",
+      "bootstrap_pairing": "independent source/target domain keyword resampling",
+      "accuracy_difference": -0.0626984126984127,
+      "accuracy_difference_ci_low": -0.11216931216931214,
+      "accuracy_difference_ci_high": -0.010839947089947052,
+      "macro_f1_difference": -0.06425337123436015,
+      "macro_f1_difference_ci_low": -0.11638127317433904,
+      "macro_f1_difference_ci_high": -0.011503336535787974
+    },
+    {
+      "rq": "RQ4",
+      "architecture": "cnn",
+      "source_domain": "all",
+      "comparison": "no_punctuation_minus_original",
+      "bootstrap_pairing": "paired identical keyword resamples",
+      "accuracy_difference": -0.020000000000000018,
+      "accuracy_difference_ci_low": -0.028148148148148144,
+      "accuracy_difference_ci_high": -0.011851851851851891,
+      "macro_f1_difference": -0.020060282303719812,
+      "macro_f1_difference_ci_low": -0.028263661787733495,
+      "macro_f1_difference_ci_high": -0.011899030557932722
+    },
+    {
+      "rq": "RQ4",
+      "architecture": "lstm",
+      "source_domain": "all",
+      "comparison": "no_punctuation_minus_original",
+      "bootstrap_pairing": "paired identical keyword resamples",
+      "accuracy_difference": -0.01185185185185178,
+      "accuracy_difference_ci_low": -0.025925925925925908,
+      "accuracy_difference_ci_high": 0.002240740740740653,
+      "macro_f1_difference": -0.011749857175333611,
+      "macro_f1_difference_ci_low": -0.026108664187480597,
+      "macro_f1_difference_ci_high": 0.002785536207486406
+    },
+    {
+      "rq": "RQ4",
+      "architecture": "cnn",
+      "source_domain": "all",
+      "comparison": "no_punctuation_fixed_words_minus_original",
+      "bootstrap_pairing": "paired identical keyword resamples",
+      "accuracy_difference": -0.058518518518518525,
+      "accuracy_difference_ci_low": -0.07555555555555549,
+      "accuracy_difference_ci_high": -0.0437037037037038,
+      "macro_f1_difference": -0.05828511208675424,
+      "macro_f1_difference_ci_low": -0.07538764088821158,
+      "macro_f1_difference_ci_high": -0.04361778938380175
+    },
+    {
+      "rq": "RQ4",
+      "architecture": "lstm",
+      "source_domain": "all",
+      "comparison": "no_punctuation_fixed_words_minus_original",
+      "bootstrap_pairing": "paired identical keyword resamples",
+      "accuracy_difference": -0.033333333333333326,
+      "accuracy_difference_ci_low": -0.051851851851851816,
+      "accuracy_difference_ci_high": -0.014074074074074128,
+      "macro_f1_difference": -0.03270509750076256,
+      "macro_f1_difference_ci_low": -0.051381652939553435,
+      "macro_f1_difference_ci_high": -0.013565582814813711
+    }
+  ],
+  "coefficients": [
+    {
+      "kind": "length",
+      "model": "claude-sonnet-4-6",
+      "selected_C": 0.01,
+      "positive": [
+        {
+          "feature": "log1p_character_count",
+          "coefficient": 0.10790935685071038
+        }
+      ],
+      "negative": [
+        {
+          "feature": "log1p_word_count",
+          "coefficient": -0.9060064643562207
+        }
+      ],
+      "scale": "standardized numeric features"
+    },
+    {
+      "kind": "length",
+      "model": "gemini-3-1-pro",
+      "selected_C": 0.01,
+      "positive": [
+        {
+          "feature": "log1p_word_count",
+          "coefficient": 0.8687030109964778
+        },
+        {
+          "feature": "log1p_character_count",
+          "coefficient": 0.4488265579967627
+        }
+      ],
+      "negative": [],
+      "scale": "standardized numeric features"
+    },
+    {
+      "kind": "length",
+      "model": "gpt-5-4",
+      "selected_C": 0.01,
+      "positive": [
+        {
+          "feature": "log1p_word_count",
+          "coefficient": 0.03730345335974555
+        }
+      ],
+      "negative": [
+        {
+          "feature": "log1p_character_count",
+          "coefficient": -0.5567359148474738
+        }
+      ],
+      "scale": "standardized numeric features"
+    },
+    {
+      "kind": "structure",
+      "model": "claude-sonnet-4-6",
+      "selected_C": 1.0,
+      "positive": [
+        {
+          "feature": "punctuation_character_fraction",
+          "coefficient": 2.5296390885996693
+        },
+        {
+          "feature": "mean_word_characters",
+          "coefficient": 0.6558289770953516
+        },
+        {
+          "feature": "semicolon_character_fraction",
+          "coefficient": 0.5505900994059253
+        },
+        {
+          "feature": "digit_word_fraction",
+          "coefficient": 0.25871208433704396
+        },
+        {
+          "feature": "colon_character_fraction",
+          "coefficient": 0.227010580184485
+        }
+      ],
+      "negative": [
+        {
+          "feature": "comma_character_fraction",
+          "coefficient": -1.881317757604943
+        },
+        {
+          "feature": "hyphen_character_fraction",
+          "coefficient": -1.2395407692409508
+        },
+        {
+          "feature": "quote_character_fraction",
+          "coefficient": -0.5392417410144035
+        },
+        {
+          "feature": "slash_character_fraction",
+          "coefficient": -0.4937678596356034
+        },
+        {
+          "feature": "period_character_fraction",
+          "coefficient": -0.4920776871800684
+        }
+      ],
+      "scale": "standardized numeric features"
+    },
+    {
+      "kind": "structure",
+      "model": "gemini-3-1-pro",
+      "selected_C": 1.0,
+      "positive": [
+        {
+          "feature": "parenthesis_character_fraction",
+          "coefficient": 0.7004137258506399
+        },
+        {
+          "feature": "hyphen_character_fraction",
+          "coefficient": 0.5927946900536837
+        },
+        {
+          "feature": "uppercase_character_fraction",
+          "coefficient": 0.2567898242225774
+        },
+        {
+          "feature": "quote_character_fraction",
+          "coefficient": 0.1926354519471159
+        },
+        {
+          "feature": "period_character_fraction",
+          "coefficient": 0.11192485790433061
+        }
+      ],
+      "negative": [
+        {
+          "feature": "semicolon_character_fraction",
+          "coefficient": -1.8721049262181988
+        },
+        {
+          "feature": "colon_character_fraction",
+          "coefficient": -1.8484489320393536
+        },
+        {
+          "feature": "punctuation_character_fraction",
+          "coefficient": -1.8175508927976647
+        },
+        {
+          "feature": "slash_character_fraction",
+          "coefficient": -1.0107634534927237
+        },
+        {
+          "feature": "unique_word_fraction",
+          "coefficient": -0.8534331626657777
+        }
+      ],
+      "scale": "standardized numeric features"
+    },
+    {
+      "kind": "structure",
+      "model": "gpt-5-4",
+      "selected_C": 1.0,
+      "positive": [
+        {
+          "feature": "comma_character_fraction",
+          "coefficient": 2.1429172127896123
+        },
+        {
+          "feature": "colon_character_fraction",
+          "coefficient": 1.621438351854864
+        },
+        {
+          "feature": "slash_character_fraction",
+          "coefficient": 1.5045313131283355
+        },
+        {
+          "feature": "semicolon_character_fraction",
+          "coefficient": 1.3215148268122474
+        },
+        {
+          "feature": "unique_word_fraction",
+          "coefficient": 0.6566123254339404
+        }
+      ],
+      "negative": [
+        {
+          "feature": "punctuation_character_fraction",
+          "coefficient": -0.7120881958020193
+        },
+        {
+          "feature": "parenthesis_character_fraction",
+          "coefficient": -0.5808013859914485
+        },
+        {
+          "feature": "mean_word_characters",
+          "coefficient": -0.27172485398965757
+        },
+        {
+          "feature": "uppercase_character_fraction",
+          "coefficient": -0.22546314117940738
+        },
+        {
+          "feature": "digit_word_fraction",
+          "coefficient": -0.16507706482489704
+        }
+      ],
+      "scale": "standardized numeric features"
+    },
+    {
+      "kind": "lexical",
+      "model": "claude-sonnet-4-6",
+      "selected_C": 10.0,
+      "positive": [
+        {
+          "feature": "across",
+          "coefficient": 5.971830098449025
+        },
+        {
+          "feature": "via",
+          "coefficient": 4.166605315018074
+        },
+        {
+          "feature": "addresses",
+          "coefficient": 3.7157012598866714
+        },
+        {
+          "feature": "validate",
+          "coefficient": 3.5235802875209266
+        },
+        {
+          "feature": "at",
+          "coefficient": 3.4623181092063104
+        }
+      ],
+      "negative": [
+        {
+          "feature": "and",
+          "coefficient": -7.287227475458833
+        },
+        {
+          "feature": "test",
+          "coefficient": -6.592269505241264
+        },
+        {
+          "feature": "will",
+          "coefficient": -6.1512050774202685
+        },
+        {
+          "feature": "create",
+          "coefficient": -4.330881353602562
+        },
+        {
+          "feature": "the",
+          "coefficient": -4.11152345817796
+        }
+      ],
+      "scale": "TF-IDF"
+    },
+    {
+      "kind": "lexical",
+      "model": "gemini-3-1-pro",
+      "selected_C": 10.0,
+      "positive": [
+        {
+          "feature": "will",
+          "coefficient": 9.38843745996851
+        },
+        {
+          "feature": "the",
+          "coefficient": 6.950601472308166
+        },
+        {
+          "feature": "will be",
+          "coefficient": 6.147911628372729
+        },
+        {
+          "feature": "be",
+          "coefficient": 5.423169110842582
+        },
+        {
+          "feature": "micro",
+          "coefficient": 4.3407239245284375
+        }
+      ],
+      "negative": [
+        {
+          "feature": "across",
+          "coefficient": -4.021409789068464
+        },
+        {
+          "feature": "feasible",
+          "coefficient": -4.013747848030781
+        },
+        {
+          "feature": "whether",
+          "coefficient": -3.325151287598597
+        },
+        {
+          "feature": "improve",
+          "coefficient": -3.31882506144441
+        },
+        {
+          "feature": "then",
+          "coefficient": -3.060331641400923
+        }
+      ],
+      "scale": "TF-IDF"
+    },
+    {
+      "kind": "lexical",
+      "model": "gpt-5-4",
+      "selected_C": 10.0,
+      "positive": [
+        {
+          "feature": "test",
+          "coefficient": 8.582968083081077
+        },
+        {
+          "feature": "and",
+          "coefficient": 7.858861555189518
+        },
+        {
+          "feature": "feasible",
+          "coefficient": 7.699625787311477
+        },
+        {
+          "feature": "or",
+          "coefficient": 5.79835515853532
+        },
+        {
+          "feature": "feasible with",
+          "coefficient": 5.6704092669657244
+        }
+      ],
+      "negative": [
+        {
+          "feature": "via",
+          "coefficient": -4.5177972823226815
+        },
+        {
+          "feature": "to",
+          "coefficient": -3.838944064343171
+        },
+        {
+          "feature": "we",
+          "coefficient": -3.7080665457383963
+        },
+        {
+          "feature": "will",
+          "coefficient": -3.237232382548256
+        },
+        {
+          "feature": "rates",
+          "coefficient": -3.044795378833925
+        }
+      ],
+      "scale": "TF-IDF"
+    }
+  ],
+  "audit": {
+    "all_test_ids_labels_keywords_and_predictions_verified": true,
+    "analysis_code_sha256": "ecd4fc19bd2fd7b52ed8cb5a00cc51d97a5e718edcd0f94e5d8f9f49ff81b5fb",
+    "all_saved_point_metrics_recomputed_and_matched": true,
+    "baseline_hashes_unchanged_during_analysis": true,
+    "baseline_hashes": {
+      "runs/cnn_input/best.pt": "db99323b638c36c70852f448ea21693ff2a43f400590cc6d2f78b15aa742ab9a",
+      "runs/cnn_input/config.json": "5630bb05dd1c44d5b91231a16a6a091fd21e7a3d154dac96a08426d77bd91021",
+      "runs/cnn_input/confusion_matrix.png": "fb5c11746105143a6faf3071a8bd5512ea109bdec4cc05ab9cc6d1f983546339",
+      "runs/cnn_input/data_metadata.json": "c1f3281cd586d99404c1b7d93f09a3de78ca092987798c7a1852d0cf4c952823",
+      "runs/cnn_input/history.csv": "8cf952b26365fd2a89c95475005d4183aaca83c7e62336b667305ef7667405b4",
+      "runs/cnn_input/metrics.json": "c9e93613edcd8d4297d8c6552c4c2e13ca256ca3fd1e0da7ea50a1a924961864",
+      "runs/cnn_input/test_predictions.jsonl": "8d62adeafe35461103f6b56eadf2ae65636aa0e39d1a32475be52a0b4fa6074a",
+      "runs/cnn_input/vocab.json": "d700de9bc46a1158255872ffda781001cabe12da30aa528b26412ed101c82e01",
+      "runs/cnn_input_output/best.pt": "d7826f53d5792e31b12776c3f4190e43382251f3a4683b121020af54b2e21371",
+      "runs/cnn_input_output/config.json": "9351a880c47fe17cd74b7b5011121bb4a61ef785498bd9151ac2d86963af3218",
+      "runs/cnn_input_output/confusion_matrix.png": "e3404992a0db371970cf6f2effe67a3f34478c095ec8fea835230945a9c468f4",
+      "runs/cnn_input_output/data_metadata.json": "c1f3281cd586d99404c1b7d93f09a3de78ca092987798c7a1852d0cf4c952823",
+      "runs/cnn_input_output/history.csv": "f2e5f6a8ab8a570c20ea39039b47956d3f51d2b7c2356aea54e50ea6268ddee8",
+      "runs/cnn_input_output/metrics.json": "65fe7c30b607bc1964f4de7421c83d10ff6ea38b925bef162577414072a09f5e",
+      "runs/cnn_input_output/test_predictions.jsonl": "3dde4e6647ea3e42053b88ec09f7ad3759498d0e6901fa1a4a87a7bf141df48c",
+      "runs/cnn_input_output/vocab.json": "d58261b0d0518762957493db09216c453302e0921fcd8f4fc79dad1c64509e37",
+      "runs/cnn_output/best.pt": "539e289a35a10e9380ff17cbcec321a2a8253f128f8d6d0d55df47995703574c",
+      "runs/cnn_output/config.json": "4e0b59ef4283bba2b1d912c7c673d9d8077847b90326b4e9b9c3280996306207",
+      "runs/cnn_output/confusion_matrix.png": "4ebe5f86cb37ee1a4e25e665d59db7b1376bd06b0812618cfad5570ca63cf0ff",
+      "runs/cnn_output/data_metadata.json": "c1f3281cd586d99404c1b7d93f09a3de78ca092987798c7a1852d0cf4c952823",
+      "runs/cnn_output/history.csv": "8177df46cec9831b39c870fb2821ceb4252a640eeacd4579d55eaccd19a3fd17",
+      "runs/cnn_output/metrics.json": "ec1324675a692267bf4ff48f8e22485e4d6235fa3e2e87b9db7cb783b8cb53a6",
+      "runs/cnn_output/test_predictions.jsonl": "89bfe70bf3045171b4d3f88ea3d5a170c6a44dd45c603fe7bc4e88ebee22afee",
+      "runs/cnn_output/vocab.json": "b24612c3852d8571d5effb42464a4e56360e23cb0f355a576db352d01be99885",
+      "runs/lstm_input/best.pt": "13046765aeff778482aa07b193c618624f0db5f93de6eb7112ecba48fc861343",
+      "runs/lstm_input/config.json": "ccac679deb1cf21d32f3c0a1eed2da5cb5204eec13a8d54041d39a15a278c723",
+      "runs/lstm_input/confusion_matrix.png": "fb5c11746105143a6faf3071a8bd5512ea109bdec4cc05ab9cc6d1f983546339",
+      "runs/lstm_input/data_metadata.json": "c1f3281cd586d99404c1b7d93f09a3de78ca092987798c7a1852d0cf4c952823",
+      "runs/lstm_input/history.csv": "a12dfeca2317466ee7744421621d6a90e55d0ff3cc3f97a3da35268bbc51252d",
+      "runs/lstm_input/metrics.json": "8dde7d6d1e482b07f1da78bd48fc561d0dd5414c5735ba398690a42fcca75f86",
+      "runs/lstm_input/test_predictions.jsonl": "411633549b6f344f71bc296d0c10806c465eaa41cd4f28cc94940256603db11d",
+      "runs/lstm_input/vocab.json": "d700de9bc46a1158255872ffda781001cabe12da30aa528b26412ed101c82e01",
+      "runs/lstm_input_output/best.pt": "8e4152ad267b8e1707056d985f54087043098971703240c7584bfb06f8e91d18",
+      "runs/lstm_input_output/config.json": "621cb81345265aef5bd798cd6b8b6064b273e5713dd825abae4d1141b78f42df",
+      "runs/lstm_input_output/confusion_matrix.png": "49088ba1ff04a84d08cdbef55dfd91b88459eefb3ed09b451640649980723f28",
+      "runs/lstm_input_output/data_metadata.json": "c1f3281cd586d99404c1b7d93f09a3de78ca092987798c7a1852d0cf4c952823",
+      "runs/lstm_input_output/history.csv": "90f044b1e9af6607f7522bf9b3d0d3e0be47bc1180167517c45cc21371cabc93",
+      "runs/lstm_input_output/metrics.json": "3a77c83a9cb094ac70663bf5e5cf1d90d08ea97532b08c2d7f9037b78d4a3e1b",
+      "runs/lstm_input_output/test_predictions.jsonl": "bd7f30b15e663399868a50da5d75df3d457351365f7550ec6605ed40bcaf0421",
+      "runs/lstm_input_output/vocab.json": "d58261b0d0518762957493db09216c453302e0921fcd8f4fc79dad1c64509e37",
+      "runs/lstm_output/best.pt": "2207be78163e54f8d9cd7d6beec12785ebb09263b6594062ac05113fa4cc912c",
+      "runs/lstm_output/config.json": "3bc367caee04b522cbe0d3ea2171426b8abfd9f293464c48074127228c4baf56",
+      "runs/lstm_output/confusion_matrix.png": "34323aaa990c7984adb5c66703d68ff7746e02dea3c66b2f6bb6314d8cfa768b",
+      "runs/lstm_output/data_metadata.json": "c1f3281cd586d99404c1b7d93f09a3de78ca092987798c7a1852d0cf4c952823",
+      "runs/lstm_output/history.csv": "7a3d593a40a3e88ca5fd3984b97027820512992391a4f3c97668ad24d8079fc4",
+      "runs/lstm_output/metrics.json": "486f6d35843ee342b5581d121a058c4b43f4c8964ebbedc23220a5b27a69c222",
+      "runs/lstm_output/test_predictions.jsonl": "c50e4bf7018ea6552450d1f4d80ac538fa5dcaff195041aaf1d16c3eed89ea29",
+      "runs/lstm_output/vocab.json": "b24612c3852d8571d5effb42464a4e56360e23cb0f355a576db352d01be99885",
+      "runs/results.csv": "4dfaf251801c4d92ed1705eeab378fd4f25fbf42f96d8dbb424674375d090e47",
+      "runs/tokenization_stats.json": "753dce1bc08876f667257ab18cfccb54d529408c4ea205f4df076b880ce9855a"
+    },
+    "historical_baseline_hash_snapshot_available": false,
+    "baseline_note": "No pre-extension hash snapshot exists; historical non-modification is not certified.",
+    "original_split_sha256": {
+      "train": "9822097dc4baf8ce61458ab72fe179fec1ef3a1fca826702b53ba9d33c29ffa7",
+      "validation": "6a00a306461d81b7f6220b965c04c97ac8b8b3c1c3795b2a350e214d2579cf8c",
+      "test": "a2e8c2dcd8848108c40b8b766e745d77d97994d562bd5099b8e972aca5e3d0ae"
+    },
+    "frozen_input_hashes_verified": true,
+    "rq3_protocol_sha256": "034b05d2589a4683441a062cfd60d0caa9207f1822eda34c6cfb9b600faf98c0",
+    "rq4_plan_sha256": "bbfa10e6dc8250cc9a543ce396624f1443b232bd24e9a70d36a106dc66c34566"
+  },
+  "limitations": [
+    "Exploratory extension designed after original test results were seen; no new scores used for tuning.",
+    "Intervals describe test keyword resampling, not training-seed, domain-map, or collection uncertainty.",
+    "RQ3 has only 9 physical-science and 14 life-science test keyword clusters; interval estimates are limited.",
+    "RQ3 changes requested scientific subject domain within one task and prompt template, not task type.",
+    "Direction comparisons differ in source training size and topic composition.",
+    "No-punctuation retraining tests retained predictive information, not causal reliance of the original network.",
+    "Last32 controls token count but also removes earlier content and retains word-length and lexical cues.",
+    "Raw-text feature baselines include cues such as uppercase and newlines that the neural tokenizer removes.",
+    "Linear coefficients are associations conditional on other features, not causal or neural explanations.",
+    "Intervals are descriptive and unadjusted for multiple reported comparisons."
+  ]
+}

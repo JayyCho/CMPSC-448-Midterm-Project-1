@@ -1,0 +1,7 @@
+label,model,feature,coefficient
+0,claude-sonnet-4-6,log1p_character_count,0.10790935685071038
+0,claude-sonnet-4-6,log1p_word_count,-0.9060064643562207
+1,gpt-5-4,log1p_word_count,0.03730345335974555
+1,gpt-5-4,log1p_character_count,-0.5567359148474738
+2,gemini-3-1-pro,log1p_word_count,0.8687030109964778
+2,gemini-3-1-pro,log1p_character_count,0.4488265579967627

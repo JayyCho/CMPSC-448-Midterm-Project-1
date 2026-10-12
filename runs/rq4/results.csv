@@ -1,0 +1,10 @@
+condition,model,test_accuracy,test_macro_f1,validation_macro_f1,selected_C,best_epoch,artifact_dir
+original,cnn,0.9829629629629629,0.9829526732913654,0.9822480349829573,,6,runs/cnn_output
+original,lstm,0.9577777777777777,0.9575186361709419,0.9598558841209325,,10,runs/lstm_output
+logistic_length,logistic,0.7325925925925926,0.7393656239200127,0.7014616071802432,0.01,,runs/rq4/feature_baselines/length
+logistic_structure,logistic,0.8970370370370371,0.8967134655282009,0.855904888071044,1.0,,runs/rq4/feature_baselines/structure
+logistic_lexical,logistic,0.9888888888888889,0.9888860488868625,0.9881537062525637,10.0,,runs/rq4/feature_baselines/lexical
+no_punctuation,cnn,0.9629629629629629,0.9628923909876456,0.9636838334638324,,10,runs/rq4/no_punctuation/cnn_output
+no_punctuation,lstm,0.945925925925926,0.9457687789956083,0.947132234258898,,9,runs/rq4/no_punctuation/lstm_output
+no_punctuation_fixed_words,cnn,0.9244444444444444,0.9246675612046111,0.9290589137427641,,4,runs/rq4/no_punctuation_fixed_words/cnn_output
+no_punctuation_fixed_words,lstm,0.9244444444444444,0.9248135386701793,0.9166927963682404,,7,runs/rq4/no_punctuation_fixed_words/lstm_output

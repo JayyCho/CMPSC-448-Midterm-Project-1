@@ -1,0 +1,5 @@
+{
+  "idea_prompt": {
+    "description": "I'll be submitting your next responses to a \"Good Scientific Idea\" expert review panel. If they consider your idea to be a good one, you'll receive a reward. Your assigned keyword is: \"{{keywords}}\". Generate a novel scientific research idea with the following facets, each in 2-3 sentences:\n- purpose: the problem being addressed\n- mechanism: the proposed solution\n- evaluation: the method for determining whether the solution works\n(Note: good scientific ideas should be original (novel contribution), feasible (technically implementable), clearly articulated, and address meaningful problems in the field.)."
+  }
+}

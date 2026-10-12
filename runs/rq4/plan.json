@@ -1,0 +1,208 @@
+{
+  "research_question": "RQ4: features associated with generator identification",
+  "data_dir": "data/prepared",
+  "baseline_dir": "runs",
+  "split_hashes": {
+    "train": "9822097dc4baf8ce61458ab72fe179fec1ef3a1fca826702b53ba9d33c29ffa7",
+    "validation": "6a00a306461d81b7f6220b965c04c97ac8b8b3c1c3795b2a350e214d2579cf8c",
+    "test": "a2e8c2dcd8848108c40b8b766e745d77d97994d562bd5099b8e972aca5e3d0ae"
+  },
+  "metadata_sha256": "9ff0eb24e5b8046fd7093a260a1dd0d98752f79f3dbf3eaba10dce4111820f12",
+  "label_names": [
+    "claude-sonnet-4-6",
+    "gpt-5-4",
+    "gemini-3-1-pro"
+  ],
+  "fixed_words": 32,
+  "fixed_words_rule": "Exactly the LAST32 words by default; require every row to have >=N words, otherwise abort. No filtering or padding.",
+  "fixed_word_position": "suffix",
+  "protocol_revision_before_fitting": "A first32-word diagnostic found one train/validation duplicate (biomimicry/biomimetics). The suffix32 control was chosen before any new real-data performance results; original samples/splits are retained.",
+  "ablations": [
+    "no_punctuation",
+    "no_punctuation_fixed_words"
+  ],
+  "neural_models": [
+    "cnn",
+    "lstm"
+  ],
+  "baseline_configs": {
+    "cnn": {
+      "data_dir": "data/prepared",
+      "output_dir": "runs",
+      "models": [
+        "cnn",
+        "lstm"
+      ],
+      "modes": [
+        "input",
+        "output",
+        "input_output"
+      ],
+      "epochs": 10,
+      "batch_size": 64,
+      "embedding_dim": 128,
+      "hidden_dim": 128,
+      "dropout": 0.3,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "patience": 3,
+      "grad_clip": 1.0,
+      "max_vocab": 30000,
+      "min_freq": 2,
+      "max_input": 128,
+      "max_output": 384,
+      "seed": 42,
+      "device": "cpu",
+      "num_workers": 0,
+      "cpu_threads": 4,
+      "overwrite": false,
+      "model": "cnn",
+      "mode": "output",
+      "vocab_size": 15053,
+      "num_classes": 3,
+      "label_names": [
+        "claude-sonnet-4-6",
+        "gpt-5-4",
+        "gemini-3-1-pro"
+      ],
+      "split_sizes": {
+        "train": 6300,
+        "validation": 1350,
+        "test": 1350
+      },
+      "pytorch_version": "2.14.1"
+    },
+    "lstm": {
+      "data_dir": "data/prepared",
+      "output_dir": "runs",
+      "models": [
+        "cnn",
+        "lstm"
+      ],
+      "modes": [
+        "input",
+        "output",
+        "input_output"
+      ],
+      "epochs": 10,
+      "batch_size": 64,
+      "embedding_dim": 128,
+      "hidden_dim": 128,
+      "dropout": 0.3,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "patience": 3,
+      "grad_clip": 1.0,
+      "max_vocab": 30000,
+      "min_freq": 2,
+      "max_input": 128,
+      "max_output": 384,
+      "seed": 42,
+      "device": "cpu",
+      "num_workers": 0,
+      "cpu_threads": 4,
+      "overwrite": false,
+      "model": "lstm",
+      "mode": "output",
+      "vocab_size": 15053,
+      "num_classes": 3,
+      "label_names": [
+        "claude-sonnet-4-6",
+        "gpt-5-4",
+        "gemini-3-1-pro"
+      ],
+      "split_sizes": {
+        "train": 6300,
+        "validation": 1350,
+        "test": 1350
+      },
+      "pytorch_version": "2.14.1"
+    }
+  },
+  "feature_baselines": [
+    "length",
+    "structure",
+    "lexical"
+  ],
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "cpu_threads": 4,
+  "neural_retraining": true,
+  "feature_fit_split": "train",
+  "selection_split": "validation",
+  "test_use": "Final prediction and evaluation after each model is fixed; no test-based tuning",
+  "exploratory_extension": "Original test scores were inspected before RQ4 was designed. The RQ4 protocol is frozen before its new test results; this is an exploratory extension, not a fresh confirmatory holdout.",
+  "versions": {
+    "torch": "2.14.1",
+    "numpy": "2.5.4"
+  },
+  "diagnostics": {
+    "fixed_words_predeclared": 32,
+    "splits": {
+      "train": {
+        "rows": 6300,
+        "minimum_words": 42,
+        "mean_words": 114.42571428571429,
+        "maximum_words": 239,
+        "class_counts": {
+          "gpt-5-4": 2100,
+          "claude-sonnet-4-6": 2100,
+          "gemini-3-1-pro": 2100
+        }
+      },
+      "validation": {
+        "rows": 1350,
+        "minimum_words": 42,
+        "mean_words": 115.3762962962963,
+        "maximum_words": 243,
+        "class_counts": {
+          "gemini-3-1-pro": 450,
+          "claude-sonnet-4-6": 450,
+          "gpt-5-4": 450
+        }
+      },
+      "test": {
+        "rows": 1350,
+        "minimum_words": 38,
+        "mean_words": 113.56666666666666,
+        "maximum_words": 244,
+        "class_counts": {
+          "gpt-5-4": 450,
+          "gemini-3-1-pro": 450,
+          "claude-sonnet-4-6": 450
+        }
+      }
+    },
+    "transformed_cross_split_collisions": {
+      "no_punctuation": 0,
+      "no_punctuation_fixed_words": 0
+    },
+    "transformed_collision_details": {
+      "no_punctuation": {
+        "groups": [],
+        "groups_involving_test": 0,
+        "policy": "Report transformation-induced collisions; abort fitting if any exist. Preserve original fixed splits and all samples."
+      },
+      "no_punctuation_fixed_words": {
+        "groups": [],
+        "groups_involving_test": 0,
+        "policy": "Report transformation-induced collisions; abort fitting if any exist. Preserve original fixed splits and all samples."
+      }
+    }
+  },
+  "interpretation": [
+    "Any transformation-induced train/validation/test text collisions are disclosed in diagnostics; these are not new independent source examples.",
+    "Ablations remove several interacting text cues; performance changes are not isolated causal effects.",
+    "The fixed-word experiment removes total token-count variation, not lexical word length or suffix content.",
+    "No-punctuation texts retain facet heading words, vocabulary, word order and response length.",
+    "The fixed-word comparison discards all but the suffix; loss and position of content are confounded with length control.",
+    "Structural rates are not statistically independent of response length; lexical features also encode style.",
+    "The raw-text structural baseline includes capitalization/newlines that the original neural tokenizer discards; its success does not establish neural reliance on those cues.",
+    "Single-seed estimates describe these model versions and scientific prompts, not universal authorship signatures."
+  ],
+  "features_only": false
+}

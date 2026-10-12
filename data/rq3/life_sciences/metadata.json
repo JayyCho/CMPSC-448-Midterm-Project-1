@@ -1,0 +1,178 @@
+{
+  "experiment": "RQ3 subject-domain transfer within scientific ideation",
+  "label_names": [
+    "claude-sonnet-4-6",
+    "gpt-5-4",
+    "gemini-3-1-pro"
+  ],
+  "source_domain": "life_sciences",
+  "target_domain": "physical_sciences",
+  "dataset": "tax-free/scientific-ideation-diversity",
+  "requested_dataset_revision": "a6f10e87dceae4e3ec1cfcf23d002dfb7d447d76",
+  "prompt_code_revision": "bb5a2ab40c2e7f0795453c0851bc5b3d821c68b1",
+  "data_license": "CC-BY-4.0",
+  "effort": "low",
+  "prompt_style": "structured_facet",
+  "splits": {
+    "train": {
+      "rows": 1590,
+      "class_counts": {
+        "claude-sonnet-4-6": 530,
+        "gpt-5-4": 530,
+        "gemini-3-1-pro": 530
+      },
+      "keyword_count": 53,
+      "keywords": [
+        "agroforestry",
+        "agronomy",
+        "alleles",
+        "angiogenesis",
+        "antimicrobial resistance",
+        "biodiversity hotspots",
+        "biogeography",
+        "calvin cycle",
+        "cancer biology",
+        "cancer research",
+        "cell biology",
+        "cell signaling",
+        "clinical pharmacology",
+        "commensalism",
+        "comparative anatomy",
+        "conservation biology",
+        "crispr",
+        "developmental biology",
+        "developmental genetics",
+        "dna replication",
+        "ecosystem",
+        "ecosystem management",
+        "electron transport chain",
+        "enzymology",
+        "evolutionary biology",
+        "extinction",
+        "fisheries science",
+        "gastroenterology",
+        "genetic counseling",
+        "genetic drift",
+        "genome editing",
+        "geriatrics",
+        "horticulture",
+        "human ecology",
+        "landscape ecology",
+        "metabolic engineering",
+        "nephrology",
+        "neurobiology",
+        "neurology",
+        "oncogenes",
+        "parasites",
+        "pcr",
+        "protein folding",
+        "restoration ecology",
+        "rheumatology",
+        "rna",
+        "sociobiology",
+        "systems biology",
+        "transcription factors",
+        "tumor biology",
+        "tumor suppressors",
+        "vaccination",
+        "vaccination programs"
+      ],
+      "balanced_within_each_keyword": true
+    },
+    "validation": {
+      "rows": 270,
+      "class_counts": {
+        "claude-sonnet-4-6": 90,
+        "gpt-5-4": 90,
+        "gemini-3-1-pro": 90
+      },
+      "keyword_count": 9,
+      "keywords": [
+        "apoptosis",
+        "binomial nomenclature",
+        "elisa",
+        "gel electrophoresis",
+        "gene expression",
+        "metagenomics",
+        "metalloproteins",
+        "prions",
+        "vitamins"
+      ],
+      "balanced_within_each_keyword": true
+    },
+    "test": {
+      "rows": 420,
+      "class_counts": {
+        "claude-sonnet-4-6": 140,
+        "gpt-5-4": 140,
+        "gemini-3-1-pro": 140
+      },
+      "keyword_count": 14,
+      "keywords": [
+        "biology",
+        "chlorophyll",
+        "fishery science",
+        "functional foods",
+        "genes",
+        "habitat destruction",
+        "mammals",
+        "metastasis",
+        "phylogenetic trees",
+        "tissue engineering",
+        "urology",
+        "vaccines",
+        "veterinary medicine",
+        "veterinary science"
+      ],
+      "balanced_within_each_keyword": true
+    },
+    "target_test": {
+      "rows": 270,
+      "class_counts": {
+        "claude-sonnet-4-6": 90,
+        "gpt-5-4": 90,
+        "gemini-3-1-pro": 90
+      },
+      "keyword_count": 9,
+      "keywords": [
+        "astrochemistry",
+        "atmospheric science",
+        "chemical kinetics",
+        "classical mechanics",
+        "cryogenics",
+        "mars exploration",
+        "minerals",
+        "neutrino astronomy",
+        "physics"
+      ],
+      "balanced_within_each_keyword": true
+    }
+  },
+  "original_split_assignments_preserved": true,
+  "vocabulary_and_training": "source-domain train only",
+  "checkpoint_selection": "source-domain validation only",
+  "evaluation": "test is source-domain; target_test is the other domain's original test",
+  "leakage_checks": {
+    "original_ids_unique": true,
+    "original_rows_unchanged": true,
+    "pairwise_disjoint_keywords": true,
+    "pairwise_disjoint_normalized_inputs": true,
+    "pairwise_disjoint_normalized_outputs": true,
+    "all_splits_class_balanced": true
+  },
+  "limitations": [
+    "This evaluates transfer between requested subject domains within the same scientific-ideation task and prompt template. It does not evaluate transfer to a different task, dataset, human text, or unseen generator model.",
+    "Domain assignment follows the requested keyword; an idea may discuss other fields.",
+    "Only exact normalized text duplicates are excluded; related concepts can remain.",
+    "Source sample sizes differ by direction; compare each source and target test within its fitted model."
+  ],
+  "provenance": {
+    "prepared_file_sha256": {
+      "train.jsonl": "9822097dc4baf8ce61458ab72fe179fec1ef3a1fca826702b53ba9d33c29ffa7",
+      "validation.jsonl": "6a00a306461d81b7f6220b965c04c97ac8b8b3c1c3795b2a350e214d2579cf8c",
+      "test.jsonl": "a2e8c2dcd8848108c40b8b766e745d77d97994d562bd5099b8e972aca5e3d0ae"
+    },
+    "prepared_metadata_sha256": "9ff0eb24e5b8046fd7093a260a1dd0d98752f79f3dbf3eaba10dce4111820f12",
+    "domain_mapping_sha256": "cbb52d72a36e3f41c11b6f9837e3464c9bfdcad267ae5943134b82a722dae7b7"
+  }
+}

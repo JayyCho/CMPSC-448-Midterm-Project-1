@@ -1,0 +1,66 @@
+{
+  "source_domain": "life_sciences",
+  "target_domain": "physical_sciences",
+  "model": "lstm",
+  "mode": "output",
+  "seed": 42,
+  "best_epoch": 8,
+  "checkpoint_sha256": "ac679ba9339fcc87d35007907e1cfbcf343cf1d84e27821ff6bdbaac107d20eb",
+  "target_test": {
+    "accuracy": 0.8925925925925926,
+    "macro_f1": 0.8906409082879673,
+    "weighted_f1": 0.8906409082879672,
+    "classification_report": {
+      "claude-sonnet-4-6": {
+        "precision": 0.8974358974358975,
+        "recall": 0.7777777777777778,
+        "f1-score": 0.8333333333333334,
+        "support": 90.0
+      },
+      "gpt-5-4": {
+        "precision": 0.8842105263157894,
+        "recall": 0.9333333333333333,
+        "f1-score": 0.9081081081081082,
+        "support": 90.0
+      },
+      "gemini-3-1-pro": {
+        "precision": 0.8969072164948454,
+        "recall": 0.9666666666666667,
+        "f1-score": 0.93048128342246,
+        "support": 90.0
+      },
+      "accuracy": 0.8925925925925926,
+      "macro avg": {
+        "precision": 0.8928512134155108,
+        "recall": 0.8925925925925927,
+        "f1-score": 0.8906409082879673,
+        "support": 270.0
+      },
+      "weighted avg": {
+        "precision": 0.8928512134155108,
+        "recall": 0.8925925925925926,
+        "f1-score": 0.8906409082879672,
+        "support": 270.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        70,
+        11,
+        9
+      ],
+      [
+        5,
+        84,
+        1
+      ],
+      [
+        3,
+        0,
+        87
+      ]
+    ],
+    "loss": 0.3075451250429507
+  },
+  "elapsed_seconds": 0.17842666600336088
+}

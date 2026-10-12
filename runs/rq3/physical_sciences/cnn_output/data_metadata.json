@@ -1,0 +1,190 @@
+{
+  "experiment": "RQ3 subject-domain transfer within scientific ideation",
+  "label_names": [
+    "claude-sonnet-4-6",
+    "gpt-5-4",
+    "gemini-3-1-pro"
+  ],
+  "source_domain": "physical_sciences",
+  "target_domain": "life_sciences",
+  "dataset": "tax-free/scientific-ideation-diversity",
+  "requested_dataset_revision": "a6f10e87dceae4e3ec1cfcf23d002dfb7d447d76",
+  "prompt_code_revision": "bb5a2ab40c2e7f0795453c0851bc5b3d821c68b1",
+  "data_license": "CC-BY-4.0",
+  "effort": "low",
+  "prompt_style": "structured_facet",
+  "splits": {
+    "train": {
+      "rows": 1800,
+      "class_counts": {
+        "claude-sonnet-4-6": 600,
+        "gpt-5-4": 600,
+        "gemini-3-1-pro": 600
+      },
+      "keyword_count": 60,
+      "keywords": [
+        "astrophysics",
+        "carbon nanotubes",
+        "celestial mechanics",
+        "ceramics",
+        "cern",
+        "chemical bonding",
+        "chemical reactions",
+        "chemical synthesis",
+        "continental drift",
+        "coronal mass ejections",
+        "crystallization",
+        "dark energy",
+        "decoherence",
+        "diffraction",
+        "fermions",
+        "gemology",
+        "geodesy",
+        "geomagnetism",
+        "glaciology",
+        "gravitational lensing",
+        "greenhouse gases",
+        "heat transfer",
+        "helioseismology",
+        "holography",
+        "hubble space telescope",
+        "hurricanes",
+        "infrared astronomy",
+        "inorganic chemistry",
+        "interstellar medium",
+        "kirchhoffs laws",
+        "lunar exploration",
+        "marine chemistry",
+        "metallurgy",
+        "metamorphic rocks",
+        "mineralogy",
+        "nuclear fusion",
+        "observational astronomy",
+        "optics",
+        "organic chemistry",
+        "particle accelerator",
+        "planets",
+        "quantum field theory",
+        "quantum sensors",
+        "radiation physics",
+        "relativity",
+        "seafloor spreading",
+        "seismology",
+        "solar system",
+        "space weather",
+        "stable isotopes",
+        "statistical mechanics",
+        "structural geology",
+        "supernovae",
+        "telescope",
+        "thermodynamics",
+        "tornadoes",
+        "valence electrons",
+        "weather forecasting",
+        "weather satellites",
+        "wormholes"
+      ],
+      "balanced_within_each_keyword": true
+    },
+    "validation": {
+      "rows": 420,
+      "class_counts": {
+        "claude-sonnet-4-6": 140,
+        "gpt-5-4": 140,
+        "gemini-3-1-pro": 140
+      },
+      "keyword_count": 14,
+      "keywords": [
+        "computational chemistry",
+        "cosmic inflation",
+        "hawking radiation",
+        "infrared spectroscopy",
+        "keplers laws",
+        "kinematics",
+        "lunar missions",
+        "mars rover",
+        "numerical weather prediction",
+        "photochemistry",
+        "planetary science",
+        "radio astronomy",
+        "standard model",
+        "statistical physics"
+      ],
+      "balanced_within_each_keyword": true
+    },
+    "test": {
+      "rows": 270,
+      "class_counts": {
+        "claude-sonnet-4-6": 90,
+        "gpt-5-4": 90,
+        "gemini-3-1-pro": 90
+      },
+      "keyword_count": 9,
+      "keywords": [
+        "astrochemistry",
+        "atmospheric science",
+        "chemical kinetics",
+        "classical mechanics",
+        "cryogenics",
+        "mars exploration",
+        "minerals",
+        "neutrino astronomy",
+        "physics"
+      ],
+      "balanced_within_each_keyword": true
+    },
+    "target_test": {
+      "rows": 420,
+      "class_counts": {
+        "claude-sonnet-4-6": 140,
+        "gpt-5-4": 140,
+        "gemini-3-1-pro": 140
+      },
+      "keyword_count": 14,
+      "keywords": [
+        "biology",
+        "chlorophyll",
+        "fishery science",
+        "functional foods",
+        "genes",
+        "habitat destruction",
+        "mammals",
+        "metastasis",
+        "phylogenetic trees",
+        "tissue engineering",
+        "urology",
+        "vaccines",
+        "veterinary medicine",
+        "veterinary science"
+      ],
+      "balanced_within_each_keyword": true
+    }
+  },
+  "original_split_assignments_preserved": true,
+  "vocabulary_and_training": "source-domain train only",
+  "checkpoint_selection": "source-domain validation only",
+  "evaluation": "test is source-domain; target_test is the other domain's original test",
+  "leakage_checks": {
+    "original_ids_unique": true,
+    "original_rows_unchanged": true,
+    "pairwise_disjoint_keywords": true,
+    "pairwise_disjoint_normalized_inputs": true,
+    "pairwise_disjoint_normalized_outputs": true,
+    "all_splits_class_balanced": true
+  },
+  "limitations": [
+    "This evaluates transfer between requested subject domains within the same scientific-ideation task and prompt template. It does not evaluate transfer to a different task, dataset, human text, or unseen generator model.",
+    "Domain assignment follows the requested keyword; an idea may discuss other fields.",
+    "Only exact normalized text duplicates are excluded; related concepts can remain.",
+    "Source sample sizes differ by direction; compare each source and target test within its fitted model."
+  ],
+  "provenance": {
+    "prepared_file_sha256": {
+      "train.jsonl": "9822097dc4baf8ce61458ab72fe179fec1ef3a1fca826702b53ba9d33c29ffa7",
+      "validation.jsonl": "6a00a306461d81b7f6220b965c04c97ac8b8b3c1c3795b2a350e214d2579cf8c",
+      "test.jsonl": "a2e8c2dcd8848108c40b8b766e745d77d97994d562bd5099b8e972aca5e3d0ae"
+    },
+    "prepared_metadata_sha256": "9ff0eb24e5b8046fd7093a260a1dd0d98752f79f3dbf3eaba10dce4111820f12",
+    "domain_mapping_sha256": "cbb52d72a36e3f41c11b6f9837e3464c9bfdcad267ae5943134b82a722dae7b7"
+  }
+}
